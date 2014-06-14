@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using Clide;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
+using ScriptVS.Project;
 
 namespace ScriptVS
 {

@@ -1,0 +1,22 @@
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Blank scriptcs application</Name>
+    <Description>An empty scriptcs application.</Description>
+    <!--<Icon Package="{FE8A8C3D-328A-476D-99F9-2A24B75F8C7F}" ID="401" />-->
+    <ProjectType>ScriptCS</ProjectType>
+    <TemplateID>ScriptCS.Package.Empty</TemplateID>
+    <SortOrder>800</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>ScriptCS App</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+    <!--<PreviewImage>Preview.png</PreviewImage>-->
+  </TemplateData>
+  <TemplateContent>
+    <Project File="ScriptCsApp.csxproj" ReplaceParameters="true">
+      <ProjectItem OpenInEditor="true">app.csx</ProjectItem>
+      <ProjectItem ReplaceParameters="true">README.md</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
