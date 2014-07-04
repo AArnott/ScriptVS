@@ -10,14 +10,16 @@ namespace ScriptVS.Project
 {
     [Export]
     [PartMetadata(ProjectCapabilities.Requires, Constants.ScriptCS)]
-    [ProjectTypeRegistration(Constants.ProjectTypeGuid,
-        "ScriptCS", "ScriptCS Project Files (*.csxproj);*.csproj", "csxproj",
-        "ScriptCS", Constants.PackageGuid, PossibleProjectExtensions = "csxproj",
-        LanguageVsTemplate = "ScriptCS", ProjectTemplatesDir = "ProjectTemplates\\ScriptCsApp")]
+    [ProjectTypeRegistration(projectTypeGuid: Constants.ProjectTypeGuid, 
+        displayName: Constants.ScriptCS, 
+        displayProjectFileExtensions: Constants.csxprojProjectFileExtension, 
+        defaultProjectExtension: Constants.csxprojExtension,
+        language: Constants.ScriptCS, 
+        resourcePackageGuid: Constants.PackageGuid, 
+        PossibleProjectExtensions = Constants.csxprojExtension,
+        LanguageVsTemplate = Constants.ScriptCS)]
     public class ScriptCsUnconfiguredProject
     {
-        private readonly object syncObject = new object();
-        private ConfiguredProjectImporter configuredProjectImporter;
         private Lazy<IVsSolutionBuildManager> solutionBuildManager;
 
         public ScriptCsUnconfiguredProject()
@@ -34,45 +36,5 @@ namespace ScriptVS.Project
 
         [Import]
         public Lazy<IActiveConfiguredProjectBrokerService> ActiveConfiguredProjectBrokerService { get; set; }
-
-        public ScriptCsConfiguredProject NuProjActiveConfiguredProject
-        {
-            get
-            {
-                Initialize();
-                return configuredProjectImporter.ScriptCsConfiguredProject;
-            }
-        }
-
-        public ConfiguredProject ActiveConfiguredProject
-        {
-            get
-            {
-                Initialize();
-                return configuredProjectImporter.ConfiguredProject;
-            }
-        }
-
-        private void Initialize()
-        {
-            lock (syncObject)
-            {
-                if (configuredProjectImporter != null)
-                {
-                    return;
-                }
-                configuredProjectImporter = new ConfiguredProjectImporter();
-                ActiveConfiguredProjectBrokerService.Value.Register(configuredProjectImporter, true);
-            }
-        }
-
-        private sealed class ConfiguredProjectImporter
-        {
-            [Import]
-            internal ScriptCsConfiguredProject ScriptCsConfiguredProject { get; private set; }
-
-            [Import]
-            internal ConfiguredProject ConfiguredProject { get; private set; }
-        }
     }
 }

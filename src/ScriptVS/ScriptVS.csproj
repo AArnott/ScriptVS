@@ -181,27 +181,23 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Project\CapabilitiesProvider.cs" />
     <Compile Include="Project\ProjectTreeModifier.cs" />
-    <Compile Include="Project\ProjectProperties.cs" />
-    <Compile Include="Project\ScriptCsConfiguredProject.cs" />
     <Compile Include="Project\ScriptCsUnconfiguredProject.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rules\RuleProperties.cs" />
     <Compile Include="ScriptVSPackage.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ProjectTemplates\ScriptCSApp\ScriptCS.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="tools\Xaml2Cs.exe" />
-    <None Include="Resources\script_16xLG.png" />
     <None Include="packages.config" />
-    <Content Include="ProjectTemplates\ScriptCsApp\README.md">
+    <Content Include="ProjectTemplates\ScriptCSApp\README.md">
       <OutputSubPath>CSharp\ScriptCS</OutputSubPath>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\ScriptCsApp\ScriptCsApp.csxproj">
+    <Content Include="ProjectTemplates\ScriptCSApp\ScriptCSApp.csxproj">
       <OutputSubPath>CSharp\ScriptCS</OutputSubPath>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -212,23 +208,23 @@
     <None Include="tools\CommonProjectSystemExtension.targets" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ProjectTemplates\ScriptCsApp\app.csx">
+    <Content Include="ProjectTemplates\ScriptCSApp\app.csx">
       <OutputSubPath>CSharp\ScriptCS</OutputSubPath>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\ScriptCsApp\ScriptCsApp.vstemplate">
+    <Content Include="ProjectTemplates\ScriptCSApp\ScriptCSApp.vstemplate">
       <OutputSubPath>CSharp\ScriptCS</OutputSubPath>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <XamlPropertyRule Include="Rules\General.xaml">
+      <Generator>MSBuild:GenerateRuleSourceFromXaml</Generator>
+      <SubType>Designer</SubType>
+    </XamlPropertyRule>
   </ItemGroup>
   <ItemGroup>
-    <XamlPropertyRule Include="Rules\general.xaml">
+    <XamlPropertyRule Include="Rules\Gneral.BrowseObject.xaml">
       <Generator>MSBuild:GenerateRuleSourceFromXaml</Generator>
       <SubType>Designer</SubType>
     </XamlPropertyRule>

@@ -4,6 +4,8 @@
     <Identity Id="5208bc3a-63d5-4432-ab77-5a4000fc87b7" Version="1.0" Language="en-US" Publisher="Igal Tabachnik" />
     <DisplayName>ScriptVS</DisplayName>
     <Description>ScriptCS tools for Visual Studio</Description>
+    <Icon>ProjectTemplates\ScriptCSApp\ScriptCS.ico</Icon>
+    <PreviewImage>ProjectTemplates\ScriptCSApp\ScriptCS.ico</PreviewImage>
   </Metadata>
   <Installation InstalledByMsi="false">
     <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0]" />
@@ -15,5 +17,6 @@
   <Assets>
     <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
+    <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="%CurrentProject%" d:TargetPath="|%CurrentProject%;TemplateProjectOutputGroup|" Path="ProjectTemplates" d:VsixSubPath="ProjectTemplates" />
   </Assets>
 </PackageManifest>
