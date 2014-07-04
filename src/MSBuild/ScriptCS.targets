@@ -27,20 +27,19 @@
     <PropertyPageSchema Include="$(MSBuildThisFileDirectory)Rules\GeneralFile.xaml">
       <Context>File</Context>
     </PropertyPageSchema>
-    <!--<PropertyPageSchema Include="$(MSBuildThisFileDirectory)Rules\ProjectItemsSchema.xaml;"/>-->
-    <!--<PropertyPageSchema Include="$(MSBuildThisFileDirectory)Rules\debugger_general.xaml;">
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)Rules\ConsoleDebugger.xaml">
       <Context>Project</Context>
     </PropertyPageSchema>
-    <PropertyPageSchema Condition="$(OutputType) == 'Console'"
-                        Include="$(MSBuildThisFileDirectory)Rules\ConsoleDebugger.xaml">
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)Rules\DebuggerGeneral.xaml;">
       <Context>Project</Context>
     </PropertyPageSchema>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)Rules\ProjectItemsSchema.xaml;"/>
 
-    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)Rules\scc.xaml">
+    <!--<PropertyPageSchema Include="$(MSBuildThisFileDirectory)Rules\scc.xaml">
       <Context>Invisible</Context>
     </PropertyPageSchema>-->
 
-   <PropertyPageSchema Include="
+    <PropertyPageSchema Include="
                         $(MSBuildThisFileDirectory)Rules\Content.xaml;
                         $(MSBuildThisFileDirectory)Rules\Folder.xaml;
                         $(MSBuildThisFileDirectory)Rules\None.xaml;
@@ -71,4 +70,12 @@
       <Context>BrowseObject</Context>
     </PropertyPageSchema>
   </ItemGroup>
+
+  <!-- The local debugger command was set to an (empty) TargetPath before.  Now if this property is still empty,
+       set it again now that TargetPath is defined. -->
+  <PropertyGroup>
+    <!--<LocalDebuggerCommand Condition="'$(LocalDebuggerCommand)' == ''">$(TargetPath)</LocalDebuggerCommand>-->
+    <!-- We need to set this property otherwise it will try to copy our outputs, which we don't have-->
+    <CopyBuildOutputToOutputDirectory>false</CopyBuildOutputToOutputDirectory>
+  </PropertyGroup>
 </Project>

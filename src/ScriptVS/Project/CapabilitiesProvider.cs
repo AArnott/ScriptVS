@@ -27,9 +27,9 @@ namespace ScriptVS.Project
             ProjectCapabilities.Cps
         };
 
-        public Task<IEnumerable<string>> GetCapabilitiesAsync()
+        public async Task<IEnumerable<string>> GetCapabilitiesAsync()
         {
-            return Task.FromResult((IEnumerable<string>)ProjectSystem);
+            return ProjectSystem;
         }
     }
 }
