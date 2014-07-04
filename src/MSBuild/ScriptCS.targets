@@ -24,6 +24,9 @@
     <PropertyPageSchema Include="$(MSBuildThisFileDirectory)Rules\General.xaml;">
       <Context>Project</Context>
     </PropertyPageSchema>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)Rules\GeneralFile.xaml">
+      <Context>File</Context>
+    </PropertyPageSchema>
     <!--<PropertyPageSchema Include="$(MSBuildThisFileDirectory)Rules\ProjectItemsSchema.xaml;"/>-->
     <!--<PropertyPageSchema Include="$(MSBuildThisFileDirectory)Rules\debugger_general.xaml;">
       <Context>Project</Context>
@@ -32,21 +35,19 @@
                         Include="$(MSBuildThisFileDirectory)Rules\ConsoleDebugger.xaml">
       <Context>Project</Context>
     </PropertyPageSchema>
-    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)Rules\general_file.xaml">
-      <Context>File</Context>
-    </PropertyPageSchema>
+
     <PropertyPageSchema Include="$(MSBuildThisFileDirectory)Rules\scc.xaml">
       <Context>Invisible</Context>
     </PropertyPageSchema>-->
 
-    <!--<PropertyPageSchema Include="
+   <PropertyPageSchema Include="
                         $(MSBuildThisFileDirectory)Rules\Content.xaml;
-                        $(MSBuildThisFileDirectory)Rules\folder.xaml;
-                        $(MSBuildThisFileDirectory)Rules\none.xaml;
-                        $(MSBuildThisFileDirectory)Rules\EmbeddedResource.xaml;
+                        $(MSBuildThisFileDirectory)Rules\Folder.xaml;
+                        $(MSBuildThisFileDirectory)Rules\None.xaml;
                             ">
       <Context>File;BrowseObject</Context>
     </PropertyPageSchema>
+    <!--
     <PropertyPageSchema Include="
                         $(MSBuildThisFileDirectory)Rules\assemblyreference.xaml;
                         $(MSBuildThisFileDirectory)Rules\comreference.xaml;
