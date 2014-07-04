@@ -1,11 +1,12 @@
 ﻿using System;
 using System.ComponentModel.Composition;
 using Microsoft.VisualStudio.ProjectSystem;
+using Microsoft.VisualStudio.ProjectSystem.Utilities;
 
 namespace ScriptVS.Project
 {
     [Export]
-    [PartMetadata("Microsoft.VisualStudio.ProjectSystem.ProjectCapabilityRequired", Constants.ScriptCS)]
+    [PartMetadata(ProjectCapabilities.Requires, Constants.ScriptCS)]
     public sealed class ScriptCsConfiguredProject
     {
         [Import]

@@ -9,7 +9,7 @@ using Microsoft.VisualStudio.Shell.Interop;
 namespace ScriptVS.Project
 {
     [Export]
-    [PartMetadata("Microsoft.VisualStudio.ProjectSystem.ProjectCapabilityRequired", Constants.ScriptCS)]
+    [PartMetadata(ProjectCapabilities.Requires, Constants.ScriptCS)]
     [ProjectTypeRegistration(Constants.ProjectTypeGuid,
         "ScriptCS", "ScriptCS Project Files (*.csxproj);*.csproj", "csxproj",
         "ScriptCS", Constants.PackageGuid, PossibleProjectExtensions = "csxproj",

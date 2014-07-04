@@ -1,12 +1,13 @@
 ﻿using System;
 using System.ComponentModel.Composition;
 using Microsoft.VisualStudio.ProjectSystem.Designers;
+using Microsoft.VisualStudio.ProjectSystem.Utilities;
 using ScriptVS.Properties;
 
 namespace ScriptVS.Project
 {
     [Export(typeof(IProjectTreeModifier))]
-    [PartMetadata("Microsoft.VisualStudio.ProjectSystem.ProjectCapabilityRequired", Constants.ScriptCS)]
+    [PartMetadata(ProjectCapabilities.Requires, Constants.ScriptCS)]
     public sealed class ProjectTreeModifier : IProjectTreeModifier
     {
         [Import]

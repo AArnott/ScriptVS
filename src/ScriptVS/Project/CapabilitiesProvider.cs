@@ -12,7 +12,12 @@ namespace ScriptVS.Project
     [SupportsFileExtension(".csxproj")]
     public class CapabilitiesProvider : IProjectCapabilitiesProvider
     {
-        private static readonly ImmutableHashSet<string> ProjectSystem = new[] { "ScriptCS", "ReferencesFolder", "CPS" };
+        private static readonly ImmutableHashSet<string> ProjectSystem = new[]
+        {
+            Constants.ScriptCS,
+            ProjectCapabilities.ProjectReferences,
+            ProjectCapabilities.Cps
+        };
 
         public Task<IEnumerable<string>> GetCapabilitiesAsync()
         {
