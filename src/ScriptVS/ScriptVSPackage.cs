@@ -10,6 +10,7 @@ namespace ScriptVS
 {
     [PackageRegistration(UseManagedResourcesOnly = true)]
     [ProvideAutoLoad(UIContextGuids.NoSolution)]
+    [ProvideAutoLoad(UIContextGuids.SolutionExists)]
     [InstalledProductRegistration("ScriptVS", "ScriptCS tools for Visual Studio", "1.0")]
     [Guid(Constants.PackageGuid)]
     public sealed class ScriptVSPackage : Package

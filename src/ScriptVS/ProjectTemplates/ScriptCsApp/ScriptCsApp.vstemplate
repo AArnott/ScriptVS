@@ -16,7 +16,6 @@
   <TemplateContent>
     <Project TargetFileName="ScriptCSApp.csxproj" File="ScriptCSApp.csxproj" ReplaceParameters="true">
       <ProjectItem TargetFileName="app.csx" OpenInEditor="true">app.csx</ProjectItem>
-      <ProjectItem TargetFileName="README.md" ReplaceParameters="true">README.md</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>

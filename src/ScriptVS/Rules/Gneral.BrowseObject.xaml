@@ -13,10 +13,4 @@
         <DataSource Persistence="ProjectFile" Label="Configuration" HasConfigurationCondition="false" />
     </Rule.DataSource>
 
-    <StringProperty Name="FullPath" ReadOnly="True">
-        <StringProperty.DataSource>
-            <DataSource Persistence="ProjectFile" PersistedName="MSBuildProjectFullPath" />
-        </StringProperty.DataSource>
-    </StringProperty>
-
 </Rule>
