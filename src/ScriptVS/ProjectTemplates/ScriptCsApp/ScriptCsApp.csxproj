@@ -13,9 +13,7 @@
   <PropertyGroup>
     <ScriptCSToolsPath Condition=" '$(ScriptCSToolsPath)' == '' ">$(MSBuildExtensionsPath)\ScriptCS\</ScriptCSToolsPath>
   </PropertyGroup>
-  <Import Project="$(ScriptCSToolsPath)\ScriptCS.props" Condition="Exists('$(ScriptCSToolsPath)\ScriptCS.props')" />
   <ItemGroup>
     <Content Include="app.csx" />
   </ItemGroup>
-  <Import Project="$(ScriptCSToolsPath)\ScriptCS.targets" />
 </Project>
