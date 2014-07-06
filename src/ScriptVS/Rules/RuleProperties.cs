@@ -7,10 +7,11 @@ namespace ScriptVS.Rules
 {
     [Export]
     [PartMetadata(ProjectCapabilities.Requires, ProjectCapabilities.CSharp)]
-    internal partial class RuleProperties : StronglyTypedPropertyAccess
+    internal class RuleProperties : StronglyTypedPropertyAccess
     {
         [ImportingConstructor]
-        public RuleProperties([Import(RequiredCreationPolicy = CreationPolicy.Shared)] ConfiguredProject configuredProject)
+        public RuleProperties(
+            [Import(RequiredCreationPolicy = CreationPolicy.Shared)] ConfiguredProject configuredProject)
             : base(configuredProject)
         {
         }

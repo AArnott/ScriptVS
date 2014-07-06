@@ -5,12 +5,11 @@
       PageTemplate="Debugger"
       Description="Console app debugging options"
       xmlns="http://schemas.microsoft.com/build/2009/properties">
-    
+
     <Rule.DataSource>
         <DataSource Persistence="ProjectFile" />
     </Rule.DataSource>
 
-    <!-- Will hold the server port to use for IIS Express -->
     <StringProperty Name="CommandLineArguments" DisplayName="Command Line Arguments"
                     Description="Specifies additional command line arguments" />
 

@@ -5,7 +5,7 @@
       PageTemplate="generic"
       Description="Empty folder placeholders"
       xmlns="http://schemas.microsoft.com/build/2009/properties">
-    
+
     <Rule.DataSource>
         <DataSource Persistence="Intrinsic" HasConfigurationCondition="False" ItemType="Folder" />
     </Rule.DataSource>
