@@ -7,7 +7,7 @@ namespace ScriptVS.Rules
 {
     [Export]
     [PartMetadata(ProjectCapabilities.Requires, ProjectCapabilities.CSharp)]
-    internal class RuleProperties : StronglyTypedPropertyAccess
+    internal partial class RuleProperties : StronglyTypedPropertyAccess
     {
         [ImportingConstructor]
         public RuleProperties(
