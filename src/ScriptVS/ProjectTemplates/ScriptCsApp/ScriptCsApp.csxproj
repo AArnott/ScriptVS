@@ -11,9 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup>
-    <ScriptCSToolsPath Condition=" '$(ScriptCSToolsPath)' == '' ">$(MSBuildExtensionsPath)\ScriptCS\</ScriptCSToolsPath>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="app.csx" />
+    <None Include="**\*.*" />
   </ItemGroup>
 </Project>

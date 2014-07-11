@@ -5,8 +5,7 @@ namespace ScriptVS
     internal static class Constants
     {
         public const string ScriptCS = "ScriptCS";
-        public const string PackageGuid = "5208bc3a-63d5-4432-ab77-5a4000fc87b7";
-        public const string ProjectTypeGuid = "fa3c3a10-8ca9-44d2-b7ca-68ce0a1c6a5c";
+        internal const string CsharpProjectTypeGuid = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}";
         public const string csxprojProjectFileExtension = "ScriptCS Project Files (*.csxproj);*.csxproj";
         public const string csxprojExtension = "csxproj";
         public const string csxprojExtensionWithDot = "." + csxprojExtension;

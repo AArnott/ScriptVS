@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <Import Project="tools\CommonComposition.props" />
   <Import Project="tools\CommonProjectSystemExtension.props" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -154,22 +153,21 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="tools\Xaml2Cs.exe" />
-    <Content Include="Build\ScriptVS.MSBuild.Tools.props" />
-    <Content Include="Build\ScriptVS.MSBuild.Tools.targets" />
+    <Content Include="..\ScriptVS.Build\ScriptVS.MSBuild.Tools.1.0.0-pre.nupkg">
+      <Link>Packages\ScriptVS.MSBuild.Tools.1.0.0-pre.nupkg</Link>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <None Include="packages.config" />
     <Content Include="ProjectTemplates\ScriptCSApp\ScriptCSApp.csxproj">
       <OutputSubPath>CSharp\ScriptCS</OutputSubPath>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <SubType>Designer</SubType>
     </Content>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
-    <None Include="tools\CommonComposition.props" />
-    <None Include="tools\CommonComposition.targets" />
-    <None Include="tools\CommonComposition.tasks" />
     <None Include="tools\CommonProjectSystemExtension.props" />
     <None Include="tools\CommonProjectSystemExtension.targets" />
-    <NuSpec Include="Build\ScriptVS.MSBuild.Tools.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ProjectTemplates\ScriptCSApp\app.csx">
@@ -179,6 +177,7 @@
     <Content Include="ProjectTemplates\ScriptCSApp\ScriptCSApp.vstemplate">
       <OutputSubPath>CSharp\ScriptCS</OutputSubPath>
       <IncludeInVSIX>true</IncludeInVSIX>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -227,6 +226,7 @@
       <SubType>Designer</SubType>
     </XamlPropertyRule>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <UseCodebase>true</UseCodebase>
   </PropertyGroup>
@@ -237,7 +237,6 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v12.0\VSSDK\Microsoft.VsSDK.targets" Condition="false" />
-  <Import Project="tools\CommonComposition.targets" />
   <Import Project="tools\CommonProjectSystemExtension.targets" />
   <PropertyGroup>
     <AssemblySearchPaths>$(AssemblySearchPaths);$(DevEnvDir)\CommonExtensions\Microsoft\Project</AssemblySearchPaths>

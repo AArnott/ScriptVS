@@ -1,63 +1,94 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<Rule Name="ConfigurationGeneral"
-      DisplayName="General"
-      PageTemplate="generic"
-      Description="General"
-      xmlns="http://schemas.microsoft.com/build/2009/properties">
+<Rule
+  Name="ConfigurationGeneral"
+  DisplayName="General"
+  PageTemplate="generic"
+  Description="General"
+  xmlns="http://schemas.microsoft.com/build/2009/properties">
 
     <Rule.Categories>
-        <Category Name="General" DisplayName="General" Description="General" />
+        <Category Name="General" DisplayName="General" />
     </Rule.Categories>
+
     <Rule.DataSource>
-        <DataSource Persistence="ProjectFile" Label="Configuration" />
+        <DataSource Persistence="ProjectFile" />
     </Rule.DataSource>
 
-    <!-- Fixed properties -->
-
-    <StringListProperty Name="ProjectTypeGuids" Visible="False" />
-    <StringProperty Name="ProjectGuid" Visible="False">
+    <StringProperty Name="ProjectGuid" Visible="false">
         <StringProperty.DataSource>
-            <DataSource Persistence="ProjectFile" Label="Globals" HasConfigurationCondition="False" />
+            <DataSource Persistence="ProjectFile" Label="Globals" HasConfigurationCondition="false" />
         </StringProperty.DataSource>
     </StringProperty>
-    <StringProperty Name="TargetFrameworkIdentifier" Visible="False" />
-    <StringProperty Name="TargetFrameworkVersion" Visible="False" />
-    <StringProperty Name="TargetFrameworkProfile" Visible="False" />
-    <StringProperty Name="MSBuildProjectDirectory" Visible="false" />
-    <StringProperty Name="DefaultPlatform" Visible="false" />
-    <StringProperty Name="PackageAction" Visible="false"
-                    Description="The MSBuild target to use when packaging a project." />
-    <StringProperty Name="DefaultContentType" Visible="false"
-                    Description="The default content type name to use when adding files." />
-    <StringProperty Name="DebuggerSymbolsPath" Visible="false" />
-    <StringProperty Name="TargetPlatformWinMDLocation" Visible="false" />
+
+    <StringProperty
+    Name="OutputPath"
+    DisplayName="Output Path"
+    Category="General"
+    F1Keyword="javascript.project.property.outputpath"
+    Description="Specifies the location for the output from the build operation." />
+
+    <StringProperty Name="DefaultLanguage" Visible="false" Category="General">
+
+        <StringProperty.DataSource>
+            <DataSource Persistence="ProjectFile" Label="Globals" HasConfigurationCondition="false" />
+        </StringProperty.DataSource>
+    </StringProperty>
+
     <StringProperty Name="SDKReferenceDirectoryRoot" Visible="false" />
+
     <StringProperty Name="SDKReferenceRegistryRoot" Visible="false" />
-    <StringProperty Name="TargetPlatformIdentifier" Visible="false" />
-    <StringProperty Name="TargetPlatformVersion" Visible="false" />
-    <BoolProperty Name="WindowsAppContainer" Visible="false" />
-    <BoolProperty Name="WinMDAssembly" Visible="false" />
+
     <EnumProperty Name="TargetRuntime" Visible="false">
         <EnumValue Name="Managed" />
         <EnumValue Name="Native" />
-        <EnumValue Name="AppHost" DisplayName="Windows app" />
     </EnumProperty>
+
+    <StringProperty Name="DefaultContentType" Visible="false" />
+
+    <StringProperty Name="IntermediateOutputPath" Visible="false" />
+
+    <BoolProperty Name="SuppressOutOfDateMessageOnBuild" Visible="false" />
+
+    <EnumProperty Name="OutputType" Visible="false">
+        <EnumValue Name="Library" />
+        <EnumValue Name="exe" />
+        <EnumValue Name="winexe" />
+    </EnumProperty>
+
+    <DynamicEnumProperty Name="TargetFrameworkMoniker" EnumProvider="TargetFrameworkMoniker" Visible="false" />
+
+    <StringProperty Name="TargetFrameworkIdentifier" Visible="false" />
+
+    <StringProperty Name="TargetFrameworkVersion" Visible="false" />
+
+    <StringProperty Name="TargetFrameworkProfile" Visible="false" />
+
+    <StringProperty Name="TargetPath" Visible="false" />
+
+    <StringProperty Name="RootNamespace" Visible="false" />
+
+    <StringProperty Name="DebuggerSymbolsPath" Visible ="false" />
+
     <StringProperty Name="AssemblySearchPaths" Visible="false" />
-    <StringProperty Name="WinRTReferenceTabs" Visible="false" />
-    <StringProperty Name="AssemblyReferenceTabs" Visible="false" />
-    <BoolProperty Name="SuppressOutOfDateMessageOnBuild" Visible="false"
-                  Description="True to just build out-of-date projects without ever prompting the user to confirm." />
-    <BoolProperty Name="ShowAllFiles" Visible="False">
+
+    <StringListProperty Name="AvailablePlatforms" Separator="," Visible="false" />
+
+    <BoolProperty Name="ShowAllFiles" Visible="false">
         <BoolProperty.DataSource>
-            <DataSource Persistence="UserFile" HasConfigurationCondition="False" />
-        </BoolProperty.DataSource>
-    </BoolProperty>
-    <BoolProperty Name="AutoRefresh" Visible="False">
-        <BoolProperty.DataSource>
-            <DataSource Persistence="UserFile" HasConfigurationCondition="False" />
+            <DataSource Persistence="UserFile" HasConfigurationCondition="false" />
         </BoolProperty.DataSource>
     </BoolProperty>
 
+    <BoolProperty Name="AutoRefresh" Visible="false">
+        <BoolProperty.DataSource>
+            <DataSource Persistence="UserFile" HasConfigurationCondition="false" />
+        </BoolProperty.DataSource>
+    </BoolProperty>
 
+    <StringProperty Name="FullPath" ReadOnly="true" Visible="false">
+        <StringProperty.DataSource>
+            <DataSource Persistence="ProjectFile" PersistedName="MSBuildProjectFullPath" />
+        </StringProperty.DataSource>
+    </StringProperty>
 </Rule>

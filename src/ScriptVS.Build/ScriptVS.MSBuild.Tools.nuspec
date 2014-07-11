@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+    <metadata minClientVersion="2.5">
+        <id>ScriptVS.MSBuild.Tools</id>
+        <version>1.0.0-pre</version>
+        <title>MSBuild tools for ScriptVS</title>
+        <authors>Igal Tabachnik</authors>
+        <owners>Igal Tabachnik</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Provides support for building scriptcs applications (*.csxproj projects).</description>
+        <summary>Provides support for building scriptcs applications.</summary>
+        <copyright>Copyright &#x00A9; 2014 Igal Tabachnik</copyright>
+        <language>en-us</language>
+        <tags>scriptcs scriptvs msbuild</tags>
+    </metadata>
+    <files>
+        <file src="ScriptVS.MSBuild.Tools.props" target="build\ScriptVS.MSBuild.Tools.props" />
+        <file src="ScriptVS.MSBuild.Tools.targets" target="build\ScriptVS.MSBuild.Tools.targets" />
+        <file src="..\ScriptVS\Rules\*.xaml" target="build\Rules" />
+    </files>
+</package>

@@ -1,0 +1,1 @@
+..\.nuget\nuget.exe pack ScriptVS.MSBuild.Tools.nuspec

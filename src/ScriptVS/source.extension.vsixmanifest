@@ -1,21 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
-  <Metadata>
-    <Identity Id="5208bc3a-63d5-4432-ab77-5a4000fc87b7" Version="1.0" Language="en-US" Publisher="Igal Tabachnik" />
-    <DisplayName>ScriptVS</DisplayName>
-    <Description>ScriptCS tools for Visual Studio</Description>
+<Vsix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
+  <Identifier Id="ScriptVS.bd446dd6-2775-4073-ab03-67006be280bb">
+    <Name>ScriptVS</Name>
+    <Author>Igal Tabachnik</Author>
+    <Version>1.0.0</Version>
+    <Description xml:space="preserve">Support for scriptcs (http://scriptcs.net) inside Visual Studio.</Description>
+    <Locale>1033</Locale>
+    <License></License>
     <Icon>ProjectTemplates\ScriptCSApp\ScriptCS.ico</Icon>
     <PreviewImage>ProjectTemplates\ScriptCSApp\ScriptCS.ico</PreviewImage>
-  </Metadata>
-  <Installation InstalledByMsi="false">
-    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0]" />
-  </Installation>
-  <Dependencies>
-    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
-    <Dependency Id="Microsoft.VisualStudio.MPF.12.0" DisplayName="Visual Studio MPF 12.0" d:Source="Installed" Version="[12.0]" />
-  </Dependencies>
-  <Assets>
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
-    <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="%CurrentProject%" d:TargetPath="|%CurrentProject%;TemplateProjectOutputGroup|" Path="ProjectTemplates" d:VsixSubPath="ProjectTemplates" />
-  </Assets>
-</PackageManifest>
+    <SupportedProducts>
+      <VisualStudio Version="12.0">
+        <Edition>Ultimate</Edition>
+        <Edition>Premium</Edition>
+        <Edition>Pro</Edition>
+        <Edition>IntegratedShell</Edition>
+      </VisualStudio>
+      <VisualStudio Version="14.0">
+        <Edition>Ultimate</Edition>
+        <Edition>Premium</Edition>
+        <Edition>Pro</Edition>
+        <Edition>IntegratedShell</Edition>
+      </VisualStudio>
+    </SupportedProducts>
+    <SupportedFrameworkRuntimeEdition MinVersion="4.5" />
+  </Identifier>
+  <References>
+    <Reference Id="NuGet.67e54e40-0ae3-42c5-a949-fddf5739e6a5" MinVersion="2.8">
+      <Name>NuGet Package Manager</Name>
+      <MoreInfoUrl>http://docs.nuget.org/</MoreInfoUrl>
+    </Reference>
+  </References>
+  <Content>
+    <MefComponent>|%CurrentProject%|</MefComponent>
+    <ProjectTemplate>ProjectTemplates</ProjectTemplate>
+    <CustomExtension Type="ScriptVS.MSBuild.Tools.1.0.0-pre.nupkg">Build/ScriptVS.MSBuild.Tools.1.0.0-pre.nupkg</CustomExtension>
+  </Content>
+</Vsix>
