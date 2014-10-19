@@ -24,7 +24,6 @@ namespace ScriptVS.Project
         private static readonly ImmutableHashSet<string> ProjectSystem = new[]
         {
             Constants.ScriptCS,
-            ProjectCapabilities.ProjectReferences,
         };
 
         public async Task<IEnumerable<string>> GetCapabilitiesAsync()
