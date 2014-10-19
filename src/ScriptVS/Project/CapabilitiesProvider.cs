@@ -25,7 +25,6 @@ namespace ScriptVS.Project
         {
             Constants.ScriptCS,
             ProjectCapabilities.ProjectReferences,
-            ProjectCapabilities.Cps
         };
 
         public async Task<IEnumerable<string>> GetCapabilitiesAsync()
